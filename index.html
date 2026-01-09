@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="fr" class="h-full">
- <head>
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Le petit guide des légumes d'hiver</title>
@@ -15,40 +15,29 @@
   <script src="/_sdk/element_sdk.js"></script>
 
   <style>
-    * { box-sizing: border-box; }
+    body { box-sizing: border-box; }
 
-    /* Titres : Fonteleroy (fichier dans ton repo GitHub) */
-    @font-face{
-      font-family: "Fonteleroy";
-      src: url("./assets/fonts/FONTLERO.TTF") format("truetype");
+    /* Titres : Fontleroy (fichier dans ton repo) */
+    @font-face {
+      font-family: 'Fontleroy';
+      src: url('./assets/fonts/FONTLERO.TTF') format('truetype');
       font-weight: normal;
       font-style: normal;
       font-display: swap;
     }
 
-    /* Polices */
-    body {
-      font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-    }
-    .font-display { font-family: "Fonteleroy", serif; }
-    .font-body { font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
+    .font-display { font-family: 'Fontleroy', serif; }
+    .font-body { font-family: 'Montserrat', system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
 
-    .page {
-      min-height: 100%;
-      page-break-after: always;
-    }
+    .page { min-height: 100%; page-break-after: always; }
 
-    .vegetable-card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+    .vegetable-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
     .vegetable-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 12px 40px rgba(0,0,0,0.12);
     }
 
-    .combo-badge {
-      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-    }
+    .combo-badge { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); }
 
     .page-indicator { transition: all 0.3s ease; }
     .page-indicator.active { width: 24px; border-radius: 4px; }
@@ -66,416 +55,402 @@
 
   <style>@view-transition { navigation: auto; }</style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
- </head>
+</head>
 
- <body class="h-full font-body bg-stone-50 text-stone-800">
+<body class="h-full font-body bg-stone-50 text-stone-800">
   <div id="app" class="h-full w-full overflow-auto">
-   <!-- Navigation dots -->
-   <nav class="fixed right-4 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-2" id="page-nav">
-    <button onclick="scrollToPage(0)" class="page-indicator w-2 h-2 rounded-full bg-amber-800 active" data-page="0" aria-label="Page 1"></button>
-    <button onclick="scrollToPage(1)" class="page-indicator w-2 h-2 rounded-full bg-amber-800/40" data-page="1" aria-label="Page 2"></button>
-    <button onclick="scrollToPage(2)" class="page-indicator w-2 h-2 rounded-full bg-amber-800/40" data-page="2" aria-label="Page 3"></button>
-    <button onclick="scrollToPage(3)" class="page-indicator w-2 h-2 rounded-full bg-amber-800/40" data-page="3" aria-label="Page 4"></button>
-    <button onclick="scrollToPage(4)" class="page-indicator w-2 h-2 rounded-full bg-amber-800/40" data-page="4" aria-label="Page 5"></button>
-    <button onclick="scrollToPage(5)" class="page-indicator w-2 h-2 rounded-full bg-amber-800/40" data-page="5" aria-label="Page 6"></button>
-   </nav>
+    <!-- Navigation dots -->
+    <nav class="fixed right-4 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-2" id="page-nav">
+      <button onclick="scrollToPage(0)" class="page-indicator w-2 h-2 rounded-full bg-amber-800 active" data-page="0"></button>
+      <button onclick="scrollToPage(1)" class="page-indicator w-2 h-2 rounded-full bg-amber-800/40" data-page="1"></button>
+      <button onclick="scrollToPage(2)" class="page-indicator w-2 h-2 rounded-full bg-amber-800/40" data-page="2"></button>
+      <button onclick="scrollToPage(3)" class="page-indicator w-2 h-2 rounded-full bg-amber-800/40" data-page="3"></button>
+      <button onclick="scrollToPage(4)" class="page-indicator w-2 h-2 rounded-full bg-amber-800/40" data-page="4"></button>
+      <button onclick="scrollToPage(5)" class="page-indicator w-2 h-2 rounded-full bg-amber-800/40" data-page="5"></button>
+    </nav>
 
-   <!-- PAGE 1: COVER -->
-   <section class="page min-h-screen flex flex-col items-center justify-center px-6 py-12 relative overflow-hidden" data-page="0" style="background: linear-gradient(180deg, #fefce8 0%, #fef3c7 50%, #fde68a 100%);">
-    <!-- Decorative elements -->
-    <div class="absolute top-10 left-10 text-6xl opacity-20 rotate-12">🥕</div>
-    <div class="absolute top-20 right-16 text-5xl opacity-20 -rotate-12">🥬</div>
-    <div class="absolute bottom-32 left-16 text-5xl opacity-20 rotate-6">🧄</div>
-    <div class="absolute bottom-20 right-10 text-6xl opacity-20 -rotate-6">🌱</div>
+    <!-- PAGE 1: COVER -->
+    <section class="page min-h-screen flex flex-col items-center justify-center px-6 py-12 relative overflow-hidden"
+             data-page="0"
+             style="background: linear-gradient(180deg, #fefce8 0%, #fef3c7 50%, #fde68a 100%);">
+      <!-- Decorative elements -->
+      <div class="absolute top-10 left-10 text-6xl opacity-20 rotate-12">🥕</div>
+      <div class="absolute top-20 right-16 text-5xl opacity-20 -rotate-12">🥬</div>
+      <div class="absolute bottom-32 left-16 text-5xl opacity-20 rotate-6">🧄</div>
+      <div class="absolute bottom-20 right-10 text-6xl opacity-20 -rotate-6">🌱</div>
 
-    <div class="max-w-2xl mx-auto text-center relative z-10">
-     <!-- Brand -->
-     <div class="animate-in animate-delay-1">
-      <p id="brand-display" class="font-body text-amber-800 tracking-[0.3em] uppercase text-sm mb-8">Élise &amp; Félicie</p>
-     </div>
+      <div class="max-w-2xl mx-auto text-center relative z-10">
+        <div class="animate-in animate-delay-1">
+          <p id="brand-display" class="font-body text-amber-800 tracking-[0.3em] uppercase text-sm mb-8">
+            Élise &amp; Félicie
+          </p>
+        </div>
 
-     <!-- Main title -->
-     <h1 id="title-display" class="font-display text-5xl md:text-6xl lg:text-7xl text-amber-900 leading-tight mb-6 animate-in animate-delay-2">
-      Le petit guide des légumes d'hiver
-     </h1>
+        <h1 id="title-display" class="font-display text-5xl md:text-6xl lg:text-7xl text-amber-900 leading-tight mb-6 animate-in animate-delay-2">
+          Le petit guide des légumes d'hiver
+        </h1>
 
-     <!-- Subtitle -->
-     <p id="subtitle-display" class="font-body text-lg md:text-xl text-amber-800/80 mb-8 animate-in animate-delay-3">
-      Produits à privilégier + idées simples + accords Élise &amp; Félicie
-     </p>
+        <p id="subtitle-display" class="font-body text-lg md:text-xl text-amber-800/80 mb-8 animate-in animate-delay-3">
+          Produits à privilégier + idées simples + accords Élise &amp; Félicie
+        </p>
 
-     <!-- Tagline -->
-     <p class="font-display italic text-amber-700 text-lg mb-12 animate-in animate-delay-4">
-      Des plats réconfortants, des assiettes qui ont du goût — sans se compliquer la vie.
-     </p>
+        <p class="font-display italic text-amber-700 text-lg mb-12 animate-in animate-delay-4">
+          Des plats réconfortants, des assiettes qui ont du goût — sans se compliquer la vie.
+        </p>
 
-     <!-- Bonus callout -->
-     <div class="inline-block bg-white/60 backdrop-blur-sm rounded-2xl px-6 py-4 shadow-lg animate-in animate-delay-4">
-      <p class="text-amber-900 font-medium">✨ <span class="font-display italic">Bonus</span> : des accords prêts à l'emploi avec nos vinaigres &amp; huiles</p>
-     </div>
+        <div class="inline-block bg-white/60 backdrop-blur-sm rounded-2xl px-6 py-4 shadow-lg animate-in animate-delay-4">
+          <p class="text-amber-900 font-medium">✨ <span class="font-display italic">Bonus</span> : des accords prêts à l'emploi avec nos vinaigres &amp; huiles</p>
+        </div>
 
-     <!-- Scroll indicator -->
-     <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-      <svg class="w-6 h-6 text-amber-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-      </svg>
-     </div>
-    </div>
-   </section>
-
-   <!-- PAGE 2: INTRO -->
-   <section class="page min-h-screen flex items-center px-6 py-16 bg-white" data-page="1">
-    <div class="max-w-3xl mx-auto">
-     <h2 class="font-display text-4xl md:text-5xl text-stone-800 mb-8">En hiver, on revient à l'essentiel</h2>
-
-     <div class="space-y-6 text-lg text-stone-600 leading-relaxed">
-      <p>L'hiver, on a besoin de <strong class="text-stone-800">plats chauds, simples, nourrissants</strong>.<br>
-        Et surtout : de <strong class="text-stone-800">bons produits</strong>.</p>
-
-      <p>Manger des légumes d'hiver, ce n'est pas une contrainte.<br>
-       <span class="font-display italic text-amber-800">Le vrai secret, c'est de savoir :</span></p>
-
-      <ul class="space-y-3 pl-4">
-       <li class="flex items-start gap-3"><span class="text-emerald-600 text-xl">✓</span> <span>lesquels <strong class="text-stone-800">choisir</strong></span></li>
-       <li class="flex items-start gap-3"><span class="text-emerald-600 text-xl">✓</span> <span>comment les <strong class="text-stone-800">cuisiner sans routine</strong></span></li>
-       <li class="flex items-start gap-3"><span class="text-emerald-600 text-xl">✓</span> <span>comment les <strong class="text-stone-800">assaisonner</strong> pour transformer un légume "bof" en plat "waouh"</span></li>
-      </ul>
-     </div>
-
-     <!-- What's inside box -->
-     <div class="mt-12 bg-amber-50 rounded-3xl p-8 border border-amber-200">
-      <h3 class="font-display text-2xl text-amber-900 mb-6">Dans ce guide :</h3>
-      <div class="grid md:grid-cols-3 gap-6">
-       <div class="flex items-start gap-3"><span class="text-3xl">🥕</span><p class="text-stone-700">Les légumes d'hiver à privilégier</p></div>
-       <div class="flex items-start gap-3"><span class="text-3xl">🍳</span><p class="text-stone-700">Des idées de cuisson faciles</p></div>
-       <div class="flex items-start gap-3"><span class="text-3xl">✨</span><p class="text-stone-700">Des accords avec les produits Élise &amp; Félicie</p></div>
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+          <svg class="w-6 h-6 text-amber-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </div>
       </div>
-     </div>
-    </div>
-   </section>
+    </section>
 
-   <!-- PAGE 3: LÉGUMES RACINES -->
-   <section class="page min-h-screen px-6 py-16" data-page="2" style="background: linear-gradient(180deg, #fef7ed 0%, #fff7ed 100%);">
-    <div class="max-w-5xl mx-auto">
-     <div class="text-center mb-12">
-      <span class="text-5xl mb-4 block">🥕</span>
-      <h2 class="font-display text-4xl text-stone-800 mb-2">Légumes Racines</h2>
-      <p class="text-stone-500 font-body">Réconfort + Four</p>
-     </div>
+    <!-- PAGE 2: INTRO -->
+    <section class="page min-h-screen flex items-center px-6 py-16 bg-white" data-page="1">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-display text-4xl md:text-5xl text-stone-800 mb-8">En hiver, on revient à l'essentiel</h2>
 
-     <div class="grid md:grid-cols-3 gap-6">
-      <!-- Carotte -->
-      <div class="vegetable-card bg-white rounded-3xl p-6 shadow-md">
-       <div class="text-4xl mb-4">🥕</div>
-       <h3 class="font-display text-2xl text-stone-800 mb-4">Carotte</h3>
-       <div class="mb-4">
-        <p class="text-sm text-stone-500 uppercase tracking-wide mb-2">Idées express</p>
-        <p class="text-stone-700">Rôties au four / Soupe / Râpées en salade</p>
-       </div>
-       <div class="mb-4">
-        <p class="text-sm text-stone-500 uppercase tracking-wide mb-2">Accords E&amp;F</p>
-        <ul class="space-y-1 text-stone-700 text-sm">
-         <li>• <strong>Vinaigre mangue</strong> <span class="text-stone-500">(douceur + peps)</span></li>
-         <li>• <strong>Huile de noix</strong> <span class="text-stone-500">(rondeur, très hiver)</span></li>
-         <li>• <strong>Vinaigre balsamique</strong> <span class="text-stone-500">(caramélisation)</span></li>
-        </ul>
-       </div>
-       <div class="combo-badge rounded-xl p-3 mt-4">
-        <p class="text-xs text-amber-800 uppercase tracking-wide mb-1">⚡ Combo minute</p>
-        <p class="text-amber-900 text-sm font-medium">Carottes rôties + huile de noix + filet de vinaigre balsamique</p>
-       </div>
+        <div class="space-y-6 text-lg text-stone-600 leading-relaxed">
+          <p>
+            L'hiver, on a besoin de <strong class="text-stone-800">plats chauds, simples, nourrissants</strong>.<br>
+            Et surtout : de <strong class="text-stone-800">bons produits</strong>.
+          </p>
+
+          <p>
+            Manger des légumes d'hiver, ce n'est pas une contrainte.<br>
+            <span class="font-display italic text-amber-800">Le vrai secret, c'est de savoir :</span>
+          </p>
+
+          <ul class="space-y-3 pl-4">
+            <li class="flex items-start gap-3"><span class="text-emerald-600 text-xl">✓</span> <span>lesquels <strong class="text-stone-800">choisir</strong></span></li>
+            <li class="flex items-start gap-3"><span class="text-emerald-600 text-xl">✓</span> <span>comment les <strong class="text-stone-800">cuisiner sans routine</strong></span></li>
+            <li class="flex items-start gap-3"><span class="text-emerald-600 text-xl">✓</span> <span>comment les <strong class="text-stone-800">assaisonner</strong> pour transformer un légume "bof" en plat "waouh"</span></li>
+          </ul>
+        </div>
+
+        <div class="mt-12 bg-amber-50 rounded-3xl p-8 border border-amber-200">
+          <h3 class="font-display text-2xl text-amber-900 mb-6">Dans ce guide :</h3>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="flex items-start gap-3"><span class="text-3xl">🥕</span><p class="text-stone-700">Les légumes d'hiver à privilégier</p></div>
+            <div class="flex items-start gap-3"><span class="text-3xl">🍳</span><p class="text-stone-700">Des idées de cuisson faciles</p></div>
+            <div class="flex items-start gap-3"><span class="text-3xl">✨</span><p class="text-stone-700">Des accords avec les produits Élise &amp; Félicie</p></div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <!-- Panais / Navet -->
-      <div class="vegetable-card bg-white rounded-3xl p-6 shadow-md">
-       <div class="text-4xl mb-4">🥔</div>
-       <h3 class="font-display text-2xl text-stone-800 mb-4">Panais / Navet</h3>
-       <div class="mb-4">
-        <p class="text-sm text-stone-500 uppercase tracking-wide mb-2">Idées express</p>
-        <p class="text-stone-700">Purée / Rôtis / Poêlés</p>
-       </div>
-       <div class="mb-4">
-        <p class="text-sm text-stone-500 uppercase tracking-wide mb-2">Accords E&amp;F</p>
-        <ul class="space-y-1 text-stone-700 text-sm">
-         <li>• <strong>Vinaigre citron</strong> <span class="text-stone-500">(réveille, allège)</span></li>
-         <li>• <strong>Huile d'olive</strong> <span class="text-stone-500">(base indispensable)</span></li>
-         <li>• <strong>Vinaigre vin rouge</strong> <span class="text-stone-500">(plus "bistrot")</span></li>
-        </ul>
-       </div>
-       <div class="combo-badge rounded-xl p-3 mt-4">
-        <p class="text-xs text-amber-800 uppercase tracking-wide mb-1">⚡ Combo minute</p>
-        <p class="text-amber-900 text-sm font-medium">Navets poêlés + huile d'olive + touche vinaigre citron</p>
-       </div>
+    <!-- PAGE 3: LÉGUMES RACINES -->
+    <section class="page min-h-screen px-6 py-16" data-page="2" style="background: linear-gradient(180deg, #fef7ed 0%, #fff7ed 100%);">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+          <span class="text-5xl mb-4 block">🥕</span>
+          <h2 class="font-display text-4xl text-stone-800 mb-2">Légumes Racines</h2>
+          <p class="text-stone-500 font-body">Réconfort + Four</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- Carotte -->
+          <div class="vegetable-card bg-white rounded-3xl p-6 shadow-md">
+            <div class="text-4xl mb-4">🥕</div>
+            <h3 class="font-display text-2xl text-stone-800 mb-4">Carotte</h3>
+            <div class="mb-4">
+              <p class="text-sm text-stone-500 uppercase tracking-wide mb-2">Idées express</p>
+              <p class="text-stone-700">Rôties au four / Soupe / Râpées en salade</p>
+            </div>
+            <div class="mb-4">
+              <p class="text-sm text-stone-500 uppercase tracking-wide mb-2">Accords E&amp;F</p>
+              <ul class="space-y-1 text-stone-700 text-sm">
+                <li>• <strong>Vinaigre mangue</strong> <span class="text-stone-500">(douceur + peps)</span></li>
+                <li>• <strong>Huile de noix</strong> <span class="text-stone-500">(rondeur, très hiver)</span></li>
+                <li>• <strong>Vinaigre balsamique</strong> <span class="text-stone-500">(caramélisation)</span></li>
+              </ul>
+            </div>
+            <div class="combo-badge rounded-xl p-3 mt-4">
+              <p class="text-xs text-amber-800 uppercase tracking-wide mb-1">⚡ Combo minute</p>
+              <p class="text-amber-900 text-sm font-medium">Carottes rôties + huile de noix + filet de vinaigre balsamique</p>
+            </div>
+          </div>
+
+          <!-- Panais / Navet -->
+          <div class="vegetable-card bg-white rounded-3xl p-6 shadow-md">
+            <div class="text-4xl mb-4">🥔</div>
+            <h3 class="font-display text-2xl text-stone-800 mb-4">Panais / Navet</h3>
+            <div class="mb-4">
+              <p class="text-sm text-stone-500 uppercase tracking-wide mb-2">Idées express</p>
+              <p class="text-stone-700">Purée / Rôtis / Poêlés</p>
+            </div>
+            <div class="mb-4">
+              <p class="text-sm text-stone-500 uppercase tracking-wide mb-2">Accords E&amp;F</p>
+              <ul class="space-y-1 text-stone-700 text-sm">
+                <li>• <strong>Vinaigre citron</strong> <span class="text-stone-500">(réveille, allège)</span></li>
+                <li>• <strong>Huile d'olive</strong> <span class="text-stone-500">(base indispensable)</span></li>
+                <li>• <strong>Vinaigre vin rouge</strong> <span class="text-stone-500">(plus "bistrot")</span></li>
+              </ul>
+            </div>
+            <div class="combo-badge rounded-xl p-3 mt-4">
+              <p class="text-xs text-amber-800 uppercase tracking-wide mb-1">⚡ Combo minute</p>
+              <p class="text-amber-900 text-sm font-medium">Navets poêlés + huile d'olive + touche vinaigre citron</p>
+            </div>
+          </div>
+
+          <!-- Céleri-rave / Betterave -->
+          <div class="vegetable-card bg-white rounded-3xl p-6 shadow-md">
+            <div class="text-4xl mb-4">🧄</div>
+            <h3 class="font-display text-2xl text-stone-800 mb-4">Céleri-rave / Betterave</h3>
+            <div class="mb-4">
+              <p class="text-sm text-stone-500 uppercase tracking-wide mb-2">Idées express</p>
+              <p class="text-stone-700">Rémoulade / Salade / Rôti</p>
+            </div>
+            <div class="mb-4">
+              <p class="text-sm text-stone-500 uppercase tracking-wide mb-2">Accords E&amp;F</p>
+              <ul class="space-y-1 text-stone-700 text-sm">
+                <li>• <strong>Vinaigre framboise</strong> <span class="text-stone-500">(sur betterave : parfait)</span></li>
+                <li>• <strong>Vinaigre cassis</strong> <span class="text-stone-500">(plus intense)</span></li>
+                <li>• <strong>Huile de sésame</strong> <span class="text-stone-500">(twist torréfié)</span></li>
+              </ul>
+            </div>
+            <div class="combo-badge rounded-xl p-3 mt-4">
+              <p class="text-xs text-amber-800 uppercase tracking-wide mb-1">⚡ Combo minute</p>
+              <p class="text-amber-900 text-sm font-medium">Betterave + vinaigre framboise + huile d'olive</p>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <!-- Céleri-rave / Betterave -->
-      <div class="vegetable-card bg-white rounded-3xl p-6 shadow-md">
-       <div class="text-4xl mb-4">🧄</div>
-       <h3 class="font-display text-2xl text-stone-800 mb-4">Céleri-rave / Betterave</h3>
-       <div class="mb-4">
-        <p class="text-sm text-stone-500 uppercase tracking-wide mb-2">Idées express</p>
-        <p class="text-stone-700">Rémoulade / Salade / Rôti</p>
-       </div>
-       <div class="mb-4">
-        <p class="text-sm text-stone-500 uppercase tracking-wide mb-2">Accords E&amp;F</p>
-        <ul class="space-y-1 text-stone-700 text-sm">
-         <li>• <strong>Vinaigre framboise</strong> <span class="text-stone-500">(sur betterave : parfait)</span></li>
-         <li>• <strong>Vinaigre cassis</strong> <span class="text-stone-500">(plus intense)</span></li>
-         <li>• <strong>Huile de sésame</strong> <span class="text-stone-500">(twist torréfié)</span></li>
-        </ul>
-       </div>
-       <div class="combo-badge rounded-xl p-3 mt-4">
-        <p class="text-xs text-amber-800 uppercase tracking-wide mb-1">⚡ Combo minute</p>
-        <p class="text-amber-900 text-sm font-medium">Betterave + vinaigre framboise + huile d'olive</p>
-       </div>
+    <!-- PAGE 4: LÉGUMES FEUILLES -->
+    <section class="page min-h-screen px-6 py-16 bg-emerald-50" data-page="3">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+          <span class="text-5xl mb-4 block">🥬</span>
+          <h2 class="font-display text-4xl text-stone-800 mb-2">Légumes Feuilles &amp; Verts</h2>
+          <p class="text-stone-500 font-body">Soupes, poêlées, gratins</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- Poireau -->
+          <div class="vegetable-card bg-white rounded-3xl p-6 shadow-md">
+            <div class="text-4xl mb-4">🥬</div>
+            <h3 class="font-display text-2xl text-stone-800 mb-4">Poireau</h3>
+            <div class="mb-4">
+              <p class="text-sm text-stone-500 uppercase tracking-wide mb-2">Idées express</p>
+              <p class="text-stone-700">Fondue / Soupe / Tarte / Salade tiède</p>
+            </div>
+            <div class="mb-4">
+              <p class="text-sm text-stone-500 uppercase tracking-wide mb-2">Accords E&amp;F</p>
+              <ul class="space-y-1 text-stone-700 text-sm">
+                <li>• <strong>Vinaigre échalote</strong> <span class="text-stone-500">(salade tiède)</span></li>
+                <li>• <strong>Huile à l'ail</strong> <span class="text-stone-500">(du caractère)</span></li>
+                <li>• <strong>Vinaigrette basilic</strong> <span class="text-stone-500">(ultra simple)</span></li>
+              </ul>
+            </div>
+            <div class="combo-badge rounded-xl p-3 mt-4">
+              <p class="text-xs text-amber-800 uppercase tracking-wide mb-1">⚡ Combo minute</p>
+              <p class="text-amber-900 text-sm font-medium">Poireaux tièdes + vinaigrette basilic échalote</p>
+            </div>
+          </div>
+
+          <!-- Épinards / Blettes -->
+          <div class="vegetable-card bg-white rounded-3xl p-6 shadow-md">
+            <div class="text-4xl mb-4">🌱</div>
+            <h3 class="font-display text-2xl text-stone-800 mb-4">Épinards / Blettes</h3>
+            <div class="mb-4">
+              <p class="text-sm text-stone-500 uppercase tracking-wide mb-2">Idées express</p>
+              <p class="text-stone-700">Poêlés 5 min / Avec œuf / Dans une quiche</p>
+            </div>
+            <div class="mb-4">
+              <p class="text-sm text-stone-500 uppercase tracking-wide mb-2">Accords E&amp;F</p>
+              <ul class="space-y-1 text-stone-700 text-sm">
+                <li>• <strong>Huile à l'ail</strong> <span class="text-stone-500">(goût immédiat)</span></li>
+                <li>• <strong>Huile de sésame</strong> <span class="text-stone-500">(version asiatique)</span></li>
+                <li>• <strong>Vinaigre citron</strong> <span class="text-stone-500">(kick de fraîcheur)</span></li>
+              </ul>
+            </div>
+            <div class="combo-badge rounded-xl p-3 mt-4">
+              <p class="text-xs text-amber-800 uppercase tracking-wide mb-1">⚡ Combo minute</p>
+              <p class="text-amber-900 text-sm font-medium">Épinards poêlés + huile à l'ail + filet vinaigre citron</p>
+            </div>
+          </div>
+
+          <!-- Oignon -->
+          <div class="vegetable-card bg-white rounded-3xl p-6 shadow-md">
+            <div class="text-4xl mb-4">🧅</div>
+            <h3 class="font-display text-2xl text-stone-800 mb-4">Oignon jaune</h3>
+            <div class="mb-4">
+              <p class="text-sm text-stone-500 uppercase tracking-wide mb-2">Idées express</p>
+              <p class="text-stone-700">Confit / Base de soupe / Rôtis</p>
+            </div>
+            <div class="mb-4">
+              <p class="text-sm text-stone-500 uppercase tracking-wide mb-2">Accords E&amp;F</p>
+              <ul class="space-y-1 text-stone-700 text-sm">
+                <li>• <strong>Vinaigre balsamique</strong> <span class="text-stone-500">(caramélise)</span></li>
+                <li>• <strong>Huile d'olive</strong> <span class="text-stone-500">(base)</span></li>
+                <li>• <strong>Vinaigre figue</strong> <span class="text-stone-500">(super gourmand)</span></li>
+              </ul>
+            </div>
+            <div class="combo-badge rounded-xl p-3 mt-4">
+              <p class="text-xs text-amber-800 uppercase tracking-wide mb-1">⚡ Combo minute</p>
+              <p class="text-amber-900 text-sm font-medium">Oignons rôtis + vinaigre figue + huile d'olive</p>
+            </div>
+          </div>
+        </div>
       </div>
-     </div>
-    </div>
-   </section>
+    </section>
 
-   <!-- PAGE 4: LÉGUMES FEUILLES -->
-   <section class="page min-h-screen px-6 py-16 bg-emerald-50" data-page="3">
-    <div class="max-w-5xl mx-auto">
-     <div class="text-center mb-12">
-      <span class="text-5xl mb-4 block">🥬</span>
-      <h2 class="font-display text-4xl text-stone-800 mb-2">Légumes Feuilles &amp; Verts</h2>
-      <p class="text-stone-500 font-body">Soupes, poêlées, gratins</p>
-     </div>
+    <!-- PAGE 5: LÉGUMES DE CARACTÈRE -->
+    <section class="page min-h-screen px-6 py-16" data-page="4" style="background: linear-gradient(180deg, #fdf4ff 0%, #fae8ff 100%);">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+          <span class="text-5xl mb-4 block">🥦</span>
+          <h2 class="font-display text-4xl text-stone-800 mb-2">Légumes "de Caractère"</h2>
+          <p class="text-stone-500 font-body">Amertume, croquant, choux</p>
+        </div>
 
-     <div class="grid md:grid-cols-3 gap-6">
-      <!-- Poireau -->
-      <div class="vegetable-card bg-white rounded-3xl p-6 shadow-md">
-       <div class="text-4xl mb-4">🥬</div>
-       <h3 class="font-display text-2xl text-stone-800 mb-4">Poireau</h3>
-       <div class="mb-4">
-        <p class="text-sm text-stone-500 uppercase tracking-wide mb-2">Idées express</p>
-        <p class="text-stone-700">Fondue / Soupe / Tarte / Salade tiède</p>
-       </div>
-       <div class="mb-4">
-        <p class="text-sm text-stone-500 uppercase tracking-wide mb-2">Accords E&amp;F</p>
-        <ul class="space-y-1 text-stone-700 text-sm">
-         <li>• <strong>Vinaigre échalote</strong> <span class="text-stone-500">(salade tiède)</span></li>
-         <li>• <strong>Huile à l'ail</strong> <span class="text-stone-500">(du caractère)</span></li>
-         <li>• <strong>Vinaigrette basilic</strong> <span class="text-stone-500">(ultra simple)</span></li>
-        </ul>
-       </div>
-       <div class="combo-badge rounded-xl p-3 mt-4">
-        <p class="text-xs text-amber-800 uppercase tracking-wide mb-1">⚡ Combo minute</p>
-        <p class="text-amber-900 text-sm font-medium">Poireaux tièdes + vinaigrette basilic échalote</p>
-       </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- Chou rouge -->
+          <div class="vegetable-card bg-white rounded-3xl p-6 shadow-md">
+            <div class="text-4xl mb-4">🥬</div>
+            <h3 class="font-display text-2xl text-stone-800 mb-4">Chou rouge</h3>
+            <div class="mb-4">
+              <p class="text-sm text-stone-500 uppercase tracking-wide mb-2">Idées express</p>
+              <p class="text-stone-700">Cru en salade / Braisé / Pickles</p>
+            </div>
+            <div class="mb-4">
+              <p class="text-sm text-stone-500 uppercase tracking-wide mb-2">Accords E&amp;F</p>
+              <ul class="space-y-1 text-stone-700 text-sm">
+                <li>• <strong>Vinaigre framboise</strong> <span class="text-stone-500">(acidulé + frais)</span></li>
+                <li>• <strong>Vinaigre vin rouge</strong> <span class="text-stone-500">(traditionnel)</span></li>
+                <li>• <strong>Huile de noix</strong> <span class="text-stone-500">(ultra hiver)</span></li>
+              </ul>
+            </div>
+            <div class="combo-badge rounded-xl p-3 mt-4">
+              <p class="text-xs text-amber-800 uppercase tracking-wide mb-1">⚡ Combo minute</p>
+              <p class="text-amber-900 text-sm font-medium">Chou rouge cru + vinaigre framboise + huile de noix</p>
+            </div>
+          </div>
+
+          <!-- Endive -->
+          <div class="vegetable-card bg-white rounded-3xl p-6 shadow-md">
+            <div class="text-4xl mb-4">🌼</div>
+            <h3 class="font-display text-2xl text-stone-800 mb-4">Endive</h3>
+            <div class="mb-4">
+              <p class="text-sm text-stone-500 uppercase tracking-wide mb-2">Idées express</p>
+              <p class="text-stone-700">Salade / Rôties / Poêlées</p>
+            </div>
+            <div class="mb-4">
+              <p class="text-sm text-stone-500 uppercase tracking-wide mb-2">Accords E&amp;F</p>
+              <ul class="space-y-1 text-stone-700 text-sm">
+                <li>• <strong>Vinaigre mangue</strong> <span class="text-stone-500">(adoucit l'amertume)</span></li>
+                <li>• <strong>Vinaigre passion</strong> <span class="text-stone-500">(plus punchy)</span></li>
+                <li>• <strong>Huile de noix</strong> <span class="text-stone-500">(accord classique)</span></li>
+              </ul>
+            </div>
+            <div class="combo-badge rounded-xl p-3 mt-4">
+              <p class="text-xs text-amber-800 uppercase tracking-wide mb-1">⚡ Combo minute</p>
+              <p class="text-amber-900 text-sm font-medium">Endives + huile de noix + vinaigre mangue</p>
+            </div>
+          </div>
+
+          <!-- Chou-fleur / Brocoli -->
+          <div class="vegetable-card bg-white rounded-3xl p-6 shadow-md">
+            <div class="text-4xl mb-4">🥦</div>
+            <h3 class="font-display text-2xl text-stone-800 mb-4">Chou-fleur / Brocoli</h3>
+            <div class="mb-4">
+              <p class="text-sm text-stone-500 uppercase tracking-wide mb-2">Idées express</p>
+              <p class="text-stone-700">Rôtis au four / Vapeur + sauce / Poêlés</p>
+            </div>
+            <div class="mb-4">
+              <p class="text-sm text-stone-500 uppercase tracking-wide mb-2">Accords E&amp;F</p>
+              <ul class="space-y-1 text-stone-700 text-sm">
+                <li>• <strong>Huile piment</strong> <span class="text-stone-500">(réveille)</span></li>
+                <li>• <strong>Vinaigre citron</strong> <span class="text-stone-500">(plus léger)</span></li>
+                <li>• <strong>Vinaigre olive balsa</strong> <span class="text-stone-500">(plus rond)</span></li>
+              </ul>
+            </div>
+            <div class="combo-badge rounded-xl p-3 mt-4">
+              <p class="text-xs text-amber-800 uppercase tracking-wide mb-1">⚡ Combo minute</p>
+              <p class="text-amber-900 text-sm font-medium">Chou-fleur rôti + huile piment + vinaigre olive balsamique</p>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <!-- Épinards / Blettes -->
-      <div class="vegetable-card bg-white rounded-3xl p-6 shadow-md">
-       <div class="text-4xl mb-4">🌱</div>
-       <h3 class="font-display text-2xl text-stone-800 mb-4">Épinards / Blettes</h3>
-       <div class="mb-4">
-        <p class="text-sm text-stone-500 uppercase tracking-wide mb-2">Idées express</p>
-        <p class="text-stone-700">Poêlés 5 min / Avec œuf / Dans une quiche</p>
-       </div>
-       <div class="mb-4">
-        <p class="text-sm text-stone-500 uppercase tracking-wide mb-2">Accords E&amp;F</p>
-        <ul class="space-y-1 text-stone-700 text-sm">
-         <li>• <strong>Huile à l'ail</strong> <span class="text-stone-500">(goût immédiat)</span></li>
-         <li>• <strong>Huile de sésame</strong> <span class="text-stone-500">(version asiatique)</span></li>
-         <li>• <strong>Vinaigre citron</strong> <span class="text-stone-500">(kick de fraîcheur)</span></li>
-        </ul>
-       </div>
-       <div class="combo-badge rounded-xl p-3 mt-4">
-        <p class="text-xs text-amber-800 uppercase tracking-wide mb-1">⚡ Combo minute</p>
-        <p class="text-amber-900 text-sm font-medium">Épinards poêlés + huile à l'ail + filet vinaigre citron</p>
-       </div>
+    <!-- PAGE 6: SAUCES & CONCLUSION -->
+    <section class="page min-h-screen px-6 py-16" data-page="5" style="background: linear-gradient(180deg, #fef3c7 0%, #fbbf24 100%);">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <span class="text-5xl mb-4 block">✨</span>
+          <h2 class="font-display text-4xl text-amber-900 mb-2">Mes 3 sauces d'hiver</h2>
+          <p class="text-amber-800 font-body">Prêtes en 30 secondes</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 mb-16">
+          <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-lg">
+            <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mb-4"><span class="text-2xl">1</span></div>
+            <h3 class="font-display text-xl text-stone-800 mb-3">Sauce "Hiver doux"</h3>
+            <p class="text-stone-500 text-sm mb-4">Pour salades &amp; crudités</p>
+            <div class="space-y-2 text-stone-700">
+              <p>• 2 c.à.s huile de noix</p>
+              <p>• 1 c.à.s vinaigre mangue</p>
+              <p>• Sel, poivre</p>
+            </div>
+          </div>
+
+          <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-lg">
+            <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mb-4"><span class="text-2xl">2</span></div>
+            <h3 class="font-display text-xl text-stone-800 mb-3">Sauce "Bistrot"</h3>
+            <p class="text-stone-500 text-sm mb-4">Pour légumes rôtis</p>
+            <div class="space-y-2 text-stone-700">
+              <p>• 2 c.à.s huile d'olive</p>
+              <p>• 1 c.à.s vinaigre vin rouge</p>
+              <p>• 1 c.à.c moutarde</p>
+            </div>
+          </div>
+
+          <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-lg">
+            <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mb-4"><span class="text-2xl">3</span></div>
+            <h3 class="font-display text-xl text-stone-800 mb-3">Sauce "Caractère"</h3>
+            <p class="text-stone-500 text-sm mb-4">Pour choux &amp; endives</p>
+            <div class="space-y-2 text-stone-700">
+              <p>• 2 c.à.s huile à l'ail</p>
+              <p>• 1 c.à.s vinaigre citron</p>
+              <p>• Pincée de piment</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg">
+          <h3 class="font-display text-3xl text-amber-900 mb-4">Bon appétit !</h3>
+          <p class="text-lg text-stone-700 mb-6 max-w-xl mx-auto">
+            Avec les bons produits et les bons accords, chaque légume d'hiver devient une petite merveille.
+            <span class="font-display italic">Simple comme bonjour.</span>
+          </p>
+
+          <div class="inline-flex flex-col items-center gap-4">
+            <p class="text-amber-800 font-medium">Retrouvez tous nos produits sur</p>
+
+            <!-- CTA vers .COM -->
+            <a href="https://www.elise-felicie.com" target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center gap-2 bg-amber-900 text-white px-8 py-3 rounded-full font-medium hover:bg-amber-800 transition-colors">
+              <span>www.elise-felicie.com</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </a>
+          </div>
+
+          <p class="mt-8 text-stone-500 text-sm">© Élise &amp; Félicie — Guide des légumes d'hiver</p>
+        </div>
       </div>
-
-      <!-- Oignon -->
-      <div class="vegetable-card bg-white rounded-3xl p-6 shadow-md">
-       <div class="text-4xl mb-4">🧅</div>
-       <h3 class="font-display text-2xl text-stone-800 mb-4">Oignon jaune</h3>
-       <div class="mb-4">
-        <p class="text-sm text-stone-500 uppercase tracking-wide mb-2">Idées express</p>
-        <p class="text-stone-700">Confit / Base de soupe / Rôtis</p>
-       </div>
-       <div class="mb-4">
-        <p class="text-sm text-stone-500 uppercase tracking-wide mb-2">Accords E&amp;F</p>
-        <ul class="space-y-1 text-stone-700 text-sm">
-         <li>• <strong>Vinaigre balsamique</strong> <span class="text-stone-500">(caramélise)</span></li>
-         <li>• <strong>Huile d'olive</strong> <span class="text-stone-500">(base)</span></li>
-         <li>• <strong>Vinaigre figue</strong> <span class="text-stone-500">(super gourmand)</span></li>
-        </ul>
-       </div>
-       <div class="combo-badge rounded-xl p-3 mt-4">
-        <p class="text-xs text-amber-800 uppercase tracking-wide mb-1">⚡ Combo minute</p>
-        <p class="text-amber-900 text-sm font-medium">Oignons rôtis + vinaigre figue + huile d'olive</p>
-       </div>
-      </div>
-     </div>
-    </div>
-   </section>
-
-   <!-- PAGE 5: LÉGUMES DE CARACTÈRE -->
-   <section class="page min-h-screen px-6 py-16" data-page="4" style="background: linear-gradient(180deg, #fdf4ff 0%, #fae8ff 100%);">
-    <div class="max-w-5xl mx-auto">
-     <div class="text-center mb-12">
-      <span class="text-5xl mb-4 block">🥦</span>
-      <h2 class="font-display text-4xl text-stone-800 mb-2">Légumes "de Caractère"</h2>
-      <p class="text-stone-500 font-body">Amertume, croquant, choux</p>
-     </div>
-
-     <div class="grid md:grid-cols-3 gap-6">
-      <!-- Chou rouge -->
-      <div class="vegetable-card bg-white rounded-3xl p-6 shadow-md">
-       <div class="text-4xl mb-4">🥬</div>
-       <h3 class="font-display text-2xl text-stone-800 mb-4">Chou rouge</h3>
-       <div class="mb-4">
-        <p class="text-sm text-stone-500 uppercase tracking-wide mb-2">Idées express</p>
-        <p class="text-stone-700">Cru en salade / Braisé / Pickles</p>
-       </div>
-       <div class="mb-4">
-        <p class="text-sm text-stone-500 uppercase tracking-wide mb-2">Accords E&amp;F</p>
-        <ul class="space-y-1 text-stone-700 text-sm">
-         <li>• <strong>Vinaigre framboise</strong> <span class="text-stone-500">(acidulé + frais)</span></li>
-         <li>• <strong>Vinaigre vin rouge</strong> <span class="text-stone-500">(traditionnel)</span></li>
-         <li>• <strong>Huile de noix</strong> <span class="text-stone-500">(ultra hiver)</span></li>
-        </ul>
-       </div>
-       <div class="combo-badge rounded-xl p-3 mt-4">
-        <p class="text-xs text-amber-800 uppercase tracking-wide mb-1">⚡ Combo minute</p>
-        <p class="text-amber-900 text-sm font-medium">Chou rouge cru + vinaigre framboise + huile de noix</p>
-       </div>
-      </div>
-
-      <!-- Endive -->
-      <div class="vegetable-card bg-white rounded-3xl p-6 shadow-md">
-       <div class="text-4xl mb-4">🌼</div>
-       <h3 class="font-display text-2xl text-stone-800 mb-4">Endive</h3>
-       <div class="mb-4">
-        <p class="text-sm text-stone-500 uppercase tracking-wide mb-2">Idées express</p>
-        <p class="text-stone-700">Salade / Rôties / Poêlées</p>
-       </div>
-       <div class="mb-4">
-        <p class="text-sm text-stone-500 uppercase tracking-wide mb-2">Accords E&amp;F</p>
-        <ul class="space-y-1 text-stone-700 text-sm">
-         <li>• <strong>Vinaigre mangue</strong> <span class="text-stone-500">(adoucit l'amertume)</span></li>
-         <li>• <strong>Vinaigre passion</strong> <span class="text-stone-500">(plus punchy)</span></li>
-         <li>• <strong>Huile de noix</strong> <span class="text-stone-500">(accord classique)</span></li>
-        </ul>
-       </div>
-       <div class="combo-badge rounded-xl p-3 mt-4">
-        <p class="text-xs text-amber-800 uppercase tracking-wide mb-1">⚡ Combo minute</p>
-        <p class="text-amber-900 text-sm font-medium">Endives + huile de noix + vinaigre mangue</p>
-       </div>
-      </div>
-
-      <!-- Chou-fleur / Brocoli -->
-      <div class="vegetable-card bg-white rounded-3xl p-6 shadow-md">
-       <div class="text-4xl mb-4">🥦</div>
-       <h3 class="font-display text-2xl text-stone-800 mb-4">Chou-fleur / Brocoli</h3>
-       <div class="mb-4">
-        <p class="text-sm text-stone-500 uppercase tracking-wide mb-2">Idées express</p>
-        <p class="text-stone-700">Rôtis au four / Vapeur + sauce / Poêlés</p>
-       </div>
-       <div class="mb-4">
-        <p class="text-sm text-stone-500 uppercase tracking-wide mb-2">Accords E&amp;F</p>
-        <ul class="space-y-1 text-stone-700 text-sm">
-         <li>• <strong>Huile piment</strong> <span class="text-stone-500">(réveille)</span></li>
-         <li>• <strong>Vinaigre citron</strong> <span class="text-stone-500">(plus léger)</span></li>
-         <li>• <strong>Vinaigre olive balsa</strong> <span class="text-stone-500">(plus rond)</span></li>
-        </ul>
-       </div>
-       <div class="combo-badge rounded-xl p-3 mt-4">
-        <p class="text-xs text-amber-800 uppercase tracking-wide mb-1">⚡ Combo minute</p>
-        <p class="text-amber-900 text-sm font-medium">Chou-fleur rôti + huile piment + vinaigre olive balsamique</p>
-       </div>
-      </div>
-     </div>
-    </div>
-   </section>
-
-   <!-- PAGE 6: SAUCES & CONCLUSION -->
-   <section class="page min-h-screen px-6 py-16" data-page="5" style="background: linear-gradient(180deg, #fef3c7 0%, #fbbf24 100%);">
-    <div class="max-w-4xl mx-auto">
-     <div class="text-center mb-12">
-      <span class="text-5xl mb-4 block">✨</span>
-      <h2 class="font-display text-4xl text-amber-900 mb-2">Mes 3 sauces d'hiver</h2>
-      <p class="text-amber-800 font-body">Prêtes en 30 secondes</p>
-     </div>
-
-     <div class="grid md:grid-cols-3 gap-6 mb-16">
-      <!-- Sauce 1 -->
-      <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-lg">
-       <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mb-4"><span class="text-2xl">1</span></div>
-       <h3 class="font-display text-xl text-stone-800 mb-3">Sauce "Hiver doux"</h3>
-       <p class="text-stone-500 text-sm mb-4">Pour salades &amp; crudités</p>
-       <div class="space-y-2 text-stone-700">
-        <p>• 2 c.à.s huile de noix</p>
-        <p>• 1 c.à.s vinaigre mangue</p>
-        <p>• Sel, poivre</p>
-       </div>
-      </div>
-
-      <!-- Sauce 2 -->
-      <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-lg">
-       <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mb-4"><span class="text-2xl">2</span></div>
-       <h3 class="font-display text-xl text-stone-800 mb-3">Sauce "Bistrot"</h3>
-       <p class="text-stone-500 text-sm mb-4">Pour légumes rôtis</p>
-       <div class="space-y-2 text-stone-700">
-        <p>• 2 c.à.s huile d'olive</p>
-        <p>• 1 c.à.s vinaigre vin rouge</p>
-        <p>• 1 c.à.c moutarde</p>
-       </div>
-      </div>
-
-      <!-- Sauce 3 -->
-      <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-lg">
-       <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mb-4"><span class="text-2xl">3</span></div>
-       <h3 class="font-display text-xl text-stone-800 mb-3">Sauce "Caractère"</h3>
-       <p class="text-stone-500 text-sm mb-4">Pour choux &amp; endives</p>
-       <div class="space-y-2 text-stone-700">
-        <p>• 2 c.à.s huile à l'ail</p>
-        <p>• 1 c.à.s vinaigre citron</p>
-        <p>• Pincée de piment</p>
-       </div>
-      </div>
-     </div>
-
-     <!-- Conclusion -->
-     <div class="text-center bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg">
-      <h3 class="font-display text-3xl text-amber-900 mb-4">Bon appétit !</h3>
-      <p class="text-lg text-stone-700 mb-6 max-w-xl mx-auto">
-       Avec les bons produits et les bons accords, chaque légume d'hiver devient une petite merveille.
-       <span class="font-display italic">Simple comme bonjour.</span>
-      </p>
-
-      <!-- CTA + PDF -->
-      <div class="inline-flex flex-col items-center gap-4">
-       <p class="text-amber-800 font-medium">Retrouvez tous nos produits sur</p>
-
-       <!-- CTA vers .COM -->
-       <a href="https://www.elise-felicie.com" target="_blank" rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 bg-amber-900 text-white px-8 py-3 rounded-full font-medium hover:bg-amber-800 transition-colors">
-        <span>www.elise-felicie.com</span>
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-        </svg>
-       </a>
-
-       <!-- Bouton téléchargement PDF
-            1) Mets ton PDF dans le repo (ex: /assets/pdf/guide-legumes-hiver.pdf)
-            2) Garde le même chemin ci-dessous
-       -->
-       <a href="./assets/pdf/guide-legumes-hiver.pdf" download
-          class="inline-flex items-center gap-2 bg-white text-amber-900 px-8 py-3 rounded-full font-medium border border-amber-300 hover:bg-amber-50 transition-colors">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V3"></path>
-        </svg>
-        <span>Télécharger le guide (PDF)</span>
-       </a>
-      </div>
-
-      <p class="mt-8 text-stone-500 text-sm">© Élise &amp; Félicie — Guide des légumes d'hiver</p>
-     </div>
-    </div>
-   </section>
+    </section>
   </div>
 
   <script>
@@ -493,17 +468,14 @@
     let config = { ...defaultConfig };
 
     function scrollToPage(pageIndex) {
-      const pages = document.querySelectorAll("[data-page]");
-      if (pages[pageIndex]) {
-        pages[pageIndex].scrollIntoView({ behavior: "smooth" });
-      }
+      const pages = document.querySelectorAll('[data-page]');
+      if (pages[pageIndex]) pages[pageIndex].scrollIntoView({ behavior: 'smooth' });
     }
 
-    // Update page indicators on scroll
-    const app = document.getElementById("app");
-    app.addEventListener("scroll", () => {
-      const pages = document.querySelectorAll("[data-page]");
-      const indicators = document.querySelectorAll(".page-indicator");
+    const app = document.getElementById('app');
+    app.addEventListener('scroll', () => {
+      const pages = document.querySelectorAll('[data-page]');
+      const indicators = document.querySelectorAll('.page-indicator');
 
       pages.forEach((page, index) => {
         const rect = page.getBoundingClientRect();
@@ -511,8 +483,8 @@
 
         if (isVisible) {
           indicators.forEach((ind, i) => {
-            ind.classList.toggle("active", i === index);
-            ind.style.opacity = i === index ? "1" : "0.4";
+            ind.classList.toggle('active', i === index);
+            ind.style.opacity = i === index ? '1' : '0.4';
           });
         }
       });
@@ -521,10 +493,9 @@
     async function onConfigChange(cfg) {
       config = { ...defaultConfig, ...cfg };
 
-      // Update text content
-      const titleEl = document.getElementById("title-display");
-      const subtitleEl = document.getElementById("subtitle-display");
-      const brandEl = document.getElementById("brand-display");
+      const titleEl = document.getElementById('title-display');
+      const subtitleEl = document.getElementById('subtitle-display');
+      const brandEl = document.getElementById('brand-display');
 
       if (titleEl) titleEl.textContent = config.main_title || defaultConfig.main_title;
       if (subtitleEl) subtitleEl.textContent = config.subtitle || defaultConfig.subtitle;
@@ -534,26 +505,11 @@
     function mapToCapabilities(cfg) {
       return {
         recolorables: [
-          {
-            get: () => cfg.background_color || defaultConfig.background_color,
-            set: (value) => { cfg.background_color = value; window.elementSdk.setConfig({ background_color: value }); }
-          },
-          {
-            get: () => cfg.secondary_color || defaultConfig.secondary_color,
-            set: (value) => { cfg.secondary_color = value; window.elementSdk.setConfig({ secondary_color: value }); }
-          },
-          {
-            get: () => cfg.text_color || defaultConfig.text_color,
-            set: (value) => { cfg.text_color = value; window.elementSdk.setConfig({ text_color: value }); }
-          },
-          {
-            get: () => cfg.primary_color || defaultConfig.primary_color,
-            set: (value) => { cfg.primary_color = value; window.elementSdk.setConfig({ primary_color: value }); }
-          },
-          {
-            get: () => cfg.accent_color || defaultConfig.accent_color,
-            set: (value) => { cfg.accent_color = value; window.elementSdk.setConfig({ accent_color: value }); }
-          }
+          { get: () => cfg.background_color || defaultConfig.background_color, set: (v) => { cfg.background_color = v; window.elementSdk.setConfig({ background_color: v }); } },
+          { get: () => cfg.secondary_color || defaultConfig.secondary_color, set: (v) => { cfg.secondary_color = v; window.elementSdk.setConfig({ secondary_color: v }); } },
+          { get: () => cfg.text_color || defaultConfig.text_color, set: (v) => { cfg.text_color = v; window.elementSdk.setConfig({ text_color: v }); } },
+          { get: () => cfg.primary_color || defaultConfig.primary_color, set: (v) => { cfg.primary_color = v; window.elementSdk.setConfig({ primary_color: v }); } },
+          { get: () => cfg.accent_color || defaultConfig.accent_color, set: (v) => { cfg.accent_color = v; window.elementSdk.setConfig({ accent_color: v }); } }
         ],
         borderables: [],
         fontEditable: undefined,
@@ -569,7 +525,6 @@
       ]);
     }
 
-    // Initialize SDK
     if (window.elementSdk) {
       window.elementSdk.init({
         defaultConfig,
@@ -579,5 +534,5 @@
       });
     }
   </script>
- </body>
+</body>
 </html>
